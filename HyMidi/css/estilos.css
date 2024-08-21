@@ -1,0 +1,77 @@
+/* Variáveis de cor */
+:root {
+  --cinza: #5c009e;
+  --vermelha: #7e0e84;
+  --vermelha-escura: #af3058;
+  --branca: #fff;
+  --luz: rgb(0, 55, 255);
+}
+
+/* Estilo global do corpo da página */
+body {
+  align-items: center;
+  background: linear-gradient(45deg, #000101 0%, #6f238a 100%);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  margin: 0; /* Remove a margem padrão do body */
+}
+
+/* Estilo do cabeçalho */
+h1 {
+  color: var(--branca);
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* Estilo da seção do teclado */
+.teclado {
+  background: linear-gradient(to bottom, #eeeeee 0%, #cccccc 100%);
+  box-shadow: 6px 8px 0 6px #666, 10px 10px 10px #000;
+  border-radius: 30px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px;
+}
+
+/* Estilo das teclas */
+.tecla {
+  background-color: var(--branca);
+  border-radius: 30px;
+  box-shadow: 3px 3px 0 var(--cinza);
+  color: var(--vermelha);
+  cursor: pointer;
+  height: 120px;
+  width: 120px;
+  font-size: 1.75em;
+  font-weight: bold;
+  line-height: 120px;
+  text-align: center;
+  transition: background-color 0.2s, box-shadow 0.2s; /* Transições suaves para mudanças de cor e sombra */
+}
+
+/* Estilo das teclas ativas e clicadas */
+.tecla.ativa,
+.tecla:active {
+  background-color: var(--vermelha);
+  border: 4px solid var(--vermelha);
+  box-shadow: 3px 3px 0 var(--vermelha-escura) inset;
+  color: var(--branca);
+  outline: none;
+}
+
+/* Estilo das teclas com foco */
+.tecla.focus,
+.tecla:focus {
+  outline: none;
+  box-shadow: 1px 1px 10px var(--luz);
+}
+
+/* Estilo das teclas ativas com foco */
+.tecla.ativa:focus,
+.tecla:active:focus {
+  box-shadow: 3px 3px 0 var(--vermelha-escura) inset, 1px 1px 10px var(--luz);
+}
